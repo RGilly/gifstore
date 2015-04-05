@@ -1,12 +1,18 @@
-<h1>All Gifs</h1>
+<h1>All My Gifs</h1> 
+
+<p>Welcome to the Gifstore. The purpose of this application is to store your favorite gifs (short videos that loop). Once uploaded drag and drop the image into whatever document you are working on and resize it. Enjoy!</p>
+
+<hr>
+
+<h5>Total # of Gifs: <%= @images.count %></h5>
 
 <%= form_tag '', method: 'GET' do %>
-<%= text_field_tag(:q, params[:q], { placeholder: 'Search Query'}) %>
-<%= submit_tag 'Search by Categories' %>
+<%= text_field_tag(:q, params[:q],{ placeholder: 'Search Categories' }) %>
+<%= submit_tag 'Search' %>
 <% end %><br />
 
 <p>
-	<strong><%= link_to "Upload a new Gif", new_image_path %></strong>
+	<strong><%= link_to "Upload a New Gif", new_image_path %></strong>
 </p>
 
 <%= simple_table_for @images, with: ImagesTable %>

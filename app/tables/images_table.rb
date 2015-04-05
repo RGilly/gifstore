@@ -13,7 +13,7 @@ class ImagesTable < TableCloth::Base
         link_to 'Edit Gif', edit_image_path(image)
       end
       action do |image|
-        link_to 'Delete Gif', edit_image_path(image)
+        link_to 'Delete Gif', image_path(image)
       end
   end
 

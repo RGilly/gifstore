@@ -2,11 +2,14 @@ class ImagesController < ApplicationController
 	before_action :authenticate_user!
 
   def index
-  	@images = current_user.images
-  end
 
-  def show
-    @image = Image.find(params[:q])
+    if params[:q].present?
+      @images = Image.where(categories: params[:q])
+
+    else
+
+  	@images = current_user.images
+    end
   end
 
   def new
@@ -22,6 +25,15 @@ class ImagesController < ApplicationController
   	else
       render :new
     end
+  end
+
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to :action => 'index'
+  end
+
+  def show
   end
 
   def edit
