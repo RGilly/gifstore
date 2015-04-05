@@ -1,4 +1,9 @@
-<h1>All Photos</h1>
+<h1>All Gifs</h1>
+
+<%= form_tag '', method: 'GET' do %>
+<%= text_field_tag(:q, params[:q], { placeholder: 'Search Query'}) %>
+<%= submit_tag 'Search by Categories' %>
+<% end %><br />
 
 <p>
 	<strong><%= link_to "Upload a new Gif", new_image_path %></strong>

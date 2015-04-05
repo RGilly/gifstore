@@ -1,7 +1,24 @@
 class ImagesTable < TableCloth::Base
-    column :file
-    column :tile
+    column :file do |image|
+      image_tag image.file, size: '150x150'
+    
+    end
+
+    column :title
+
     column :categories
+
+    actions separator: ' - ' do
+      action do |image|
+        link_to 'Edit Gif', edit_image_path(image)
+      end
+      action do |image|
+        link_to 'Delete Gif', edit_image_path(image)
+      end
+  end
+
+  config.table.class = "table table-bordered"   
+
   # Define columns with the #column method
   # column :name, :email
 

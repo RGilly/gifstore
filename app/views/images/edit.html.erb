@@ -1,14 +1,18 @@
 <div class="row">
 	<div class="col-md-5">
 <%= simple_form_for @image, html: { class: 'form-horizontal'} do |form| %>
-	<%= form.input :file, label: 'Gif File' %>
-	<%= form.input :title %>
-	<%= form.input :categories %>
-	<%= form.submit  'Upload Gif', class: 'btn btn-primary'%>
+	<%= form.input :file, label: 'Gif File from Computer' %>
+	<p>
+	<%= form.label :file, 'or Gif URL' %><br />
+	<%= form.text_field :remote_file_url %><br />
+	<p>
+	<%= form.input :title %><br />
+	<p>
+	<%= form.input :categories, label: 'Categories - i.e. funny, NSFW, etc.' %><br />
+	<%= form.submit 'Upload Gif', class: 'btn btn-primary'%>
 <% end %>
 	</div>
 <div class="col-md-7">
-	<%= image_tag @image.filename, size: '100x100' %>
+	<%= image_tag @image.file, size: '200x200' %>
 </div>
 </div>
-
