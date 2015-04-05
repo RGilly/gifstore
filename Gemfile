@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+
+gem 'simple_form','~> 3.1.0'
+
+gem 'table_cloth'
+
+gem 'carrierwave'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

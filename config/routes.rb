@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'images/index'
+  
+  root to: 'images#index'
 
-  get 'images/new'
-
-  get 'images/edit'
+  devise_for :users
+  resources :images
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

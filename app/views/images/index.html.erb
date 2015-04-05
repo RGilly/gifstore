@@ -1,2 +1,7 @@
-<h1>Images#index</h1>
-<p>Find me in app/views/images/index.html.erb</p>
+<h1>All Photos</h1>
+
+<p>
+	<strong><%= link_to "Upload a new Gif", new_image_path %></strong>
+</p>
+
+<%= simple_table_for @images, with: ImagesTable %>
