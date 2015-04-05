@@ -10,6 +10,8 @@ gem 'carrierwave'
 
 gem 'twitter-bootstrap-rails'
 
+gem 'kaminari'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

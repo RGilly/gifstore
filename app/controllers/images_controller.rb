@@ -4,11 +4,11 @@ class ImagesController < ApplicationController
   def index
 
     if params[:q].present?
-      @images = Image.where(categories: params[:q])
+      @images = Image.where(categories: params[:q]).page(params[:page]).per(5)
 
     else
 
-  	@images = current_user.images
+  	   @images = current_user.images.page(params[:page]).per(5)
     end
   end
 
