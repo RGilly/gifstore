@@ -1,6 +1,6 @@
 <h2>This is your last chance, are you sure? Once deleted the gif can not be retrieved.</h2><br />
 
-<hr>
+<strong><%= button_to 'Yes, I want to delete this gif', image_path, :method => :delete, data: { confirm: 'Are you really really sure you want to delete?' }%></strong>
 
-<strong><%= link_to 'Yes, I want to Delete this gif', image_path, :method => :delete %></strong>
+<p>
 
